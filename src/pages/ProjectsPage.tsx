@@ -16,11 +16,13 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import { projects } from '../data/portfolioData';
+import { TechStack } from '../types';
 import type { ModalState } from '../types';
 
 const ProjectsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
+  const [techStackFilters, setTechStackFilters] = useState<TechStack[]>([]);
   const [modalState, setModalState] = useState<ModalState>({ open: false, projectId: null });
 
   // Get unique categories for filter
@@ -29,7 +31,14 @@ const ProjectsPage: React.FC = () => {
     return uniqueCategories.sort();
   }, []);
 
-  // Filter projects based on search term and category
+  // Get unique tech stacks for filter
+  const techStacks = useMemo(() => {
+    const allTechStacks = projects.flatMap(project => project.techStack);
+    const uniqueTechStacks = Array.from(new Set(allTechStacks));
+    return uniqueTechStacks.sort((a, b) => a.localeCompare(b));
+  }, []);
+
+  // Filter projects based on search term, category, and tech stack
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -38,9 +47,12 @@ const ProjectsPage: React.FC = () => {
       
       const matchesCategory = categoryFilter === '' || project.category === categoryFilter;
       
-      return matchesSearch && matchesCategory;
+      const matchesTechStack = techStackFilters.length === 0 || 
+                             techStackFilters.some(filter => project.techStack.includes(filter));
+      
+      return matchesSearch && matchesCategory && matchesTechStack;
     });
-  }, [searchTerm, categoryFilter]);
+  }, [searchTerm, categoryFilter, techStackFilters]);
 
   const handleProjectClick = (projectId: string) => {
     setModalState({ open: true, projectId });
@@ -57,14 +69,23 @@ const ProjectsPage: React.FC = () => {
   const handleClearFilters = () => {
     setSearchTerm('');
     setCategoryFilter('');
+    setTechStackFilters([]);
+  };
+
+  const handleTechStackClick = (techStack: TechStack) => {
+    setTechStackFilters(prev => {
+      if (prev.includes(techStack)) {
+        // Remove if already selected
+        return prev.filter(filter => filter !== techStack);
+      } else {
+        // Add if not selected
+        return [...prev, techStack];
+      }
+    });
   };
 
   return (
-    <Container maxWidth="lg" sx={{ 
-      py: 4,
-      background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1421 25%, #0a0a0a 50%, #1a1a2e 75%, #0a0a0a 100%)',
-      minHeight: '100vh'
-    }}>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 6, pt: 10 }}>
         <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
@@ -94,7 +115,7 @@ const ProjectsPage: React.FC = () => {
               }}
               sx={{
                 '& .MuiOutlinedInput-root': {
-                  borderRadius: 3,
+                  borderRadius: 1,
                 },
               }}
             />
@@ -109,7 +130,7 @@ const ProjectsPage: React.FC = () => {
                 onChange={(e) => setCategoryFilter(e.target.value)}
                 startAdornment={<FilterListIcon sx={{ mr: 1, color: 'action.active' }} />}
                 sx={{
-                  borderRadius: 3,
+                  borderRadius: 1,
                 }}
               >
                 <MenuItem value="">All Categories</MenuItem>
@@ -123,17 +144,54 @@ const ProjectsPage: React.FC = () => {
           </Box>
           
           <Box sx={{ flex: '0 0 auto' }}>
-            {(searchTerm || categoryFilter) && (
+            {(searchTerm || categoryFilter || techStackFilters.length > 0) && (
               <Chip
                 label="Clear Filters"
                 onClick={handleClearFilters}
                 onDelete={handleClearFilters}
                 color="primary"
                 variant="outlined"
-                sx={{ borderRadius: 3 }}
+                sx={{ borderRadius: 1 }}
               />
             )}
           </Box>
+        </Box>
+      </Box>
+
+      {/* Tech Stack Filter Section */}
+      <Box sx={{ mb: 4 }}>
+        <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, mb: 2 }}>
+          Filter by Technology {techStackFilters.length > 0 && `(${techStackFilters.length} selected)`}
+        </Typography>
+        <Box sx={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          gap: 1,
+          maxHeight: '120px',
+          overflowY: 'auto',
+          p: 1,
+          border: '1px solid',
+          borderColor: 'divider',
+          borderRadius: 1,
+        }}>
+          {techStacks.map((tech) => (
+            <Chip
+              key={tech}
+              label={tech}
+              onClick={() => handleTechStackClick(tech)}
+              variant={techStackFilters.includes(tech) ? 'filled' : 'outlined'}
+              color={techStackFilters.includes(tech) ? 'primary' : 'default'}
+              sx={{ 
+                fontWeight: techStackFilters.includes(tech) ? 600 : 400,
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                '&:hover': {
+                  backgroundColor: techStackFilters.includes(tech) ? 'primary.dark' : 'action.hover',
+                  transform: 'translateY(-1px)',
+                }
+              }}
+            />
+          ))}
         </Box>
       </Box>
 
@@ -143,6 +201,7 @@ const ProjectsPage: React.FC = () => {
           Showing {filteredProjects.length} of {projects.length} projects
           {searchTerm && ` for "${searchTerm}"`}
           {categoryFilter && ` in ${categoryFilter}`}
+          {techStackFilters.length > 0 && ` using ${techStackFilters.join(', ')}`}
         </Typography>
       </Box>
 

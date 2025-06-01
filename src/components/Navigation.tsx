@@ -57,18 +57,19 @@ const Navigation: React.FC = () => {
       {/* Showcase Navigation Card */}
       <Card
         sx={{
-          background: 'rgba(26, 26, 26, 0.95)',
+          background: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(0, 0, 0, 0.1)',
           borderRadius: 6,
           px: 1,
           py: 0.5,
           display: 'flex',
           gap: 0.5,
           transition: 'all 0.3s ease',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: '0 8px 32px rgba(25, 118, 210, 0.3)',
+            boxShadow: '0 8px 32px rgba(25, 118, 210, 0.2)',
           },
         }}
       >
@@ -96,16 +97,17 @@ const Navigation: React.FC = () => {
       {/* Projects Navigation Card */}
       <Card
         sx={{
-          background: 'rgba(26, 26, 26, 0.95)',
+          background: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(0, 0, 0, 0.1)',
           borderRadius: 6,
           px: 1,
           py: 0.5,
           transition: 'all 0.3s ease',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: '0 8px 32px rgba(100, 181, 246, 0.3)',
+            boxShadow: '0 8px 32px rgba(100, 181, 246, 0.2)',
           },
         }}
       >

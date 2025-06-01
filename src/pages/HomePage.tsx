@@ -51,10 +51,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <Box sx={{
-      background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1421 25%, #0a0a0a 50%, #1a1a2e 75%, #0a0a0a 100%)',
-      minHeight: '100vh'
-    }}>
+    <Box>
       {/* Hero Section - Full Viewport */}
       <Box 
         id="hero"

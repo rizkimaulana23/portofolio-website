@@ -1,4 +1,5 @@
 import type { PersonalInfo, Project, Experience } from '../types';
+import { TechStack } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: 'Rizki Maulana',
@@ -32,8 +33,18 @@ export const personalInfo: PersonalInfo = {
     }
   ],
   techStacks: [
-    'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'Java',
-    'PostgreSQL', 'MongoDB', 'Docker', 'AWS', 'Git', 'Next.js'
+    TechStack.JAVASCRIPT,
+    TechStack.TYPESCRIPT,
+    TechStack.REACT,
+    TechStack.NODE_JS,
+    TechStack.PYTHON,
+    TechStack.JAVA,
+    TechStack.POSTGRESQL,
+    TechStack.MONGODB,
+    TechStack.DOCKER,
+    TechStack.AWS,
+    TechStack.GIT,
+    TechStack.NEXT_JS
   ]
 };
 
@@ -43,14 +54,22 @@ export const projects: Project[] = [
     title: 'E-Commerce Platform',
     shortDescription: 'Full-stack e-commerce solution with modern UI and payment integration',
     fullDescription: 'A comprehensive e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. The platform supports multiple payment methods and real-time inventory management.',
+    markdownFile: 'ecommerce-platform.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=E-Commerce+Homepage',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Product+Details',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Shopping+Cart'
+      'https://picsum.photos/200',
+      'https://picsum.photos/200',
+      'https://picsum.photos/200'
     ],
     url: 'https://ecommerce-demo.example.com',
     github: 'https://github.com/rizkimaulana/ecommerce-platform',
-    techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe API', 'Docker'],
+    techStack: [
+      TechStack.REACT,
+      TechStack.TYPESCRIPT,
+      TechStack.NODE_JS,
+      TechStack.POSTGRESQL,
+      TechStack.STRIPE_API,
+      TechStack.DOCKER
+    ],
     featured: true,
     category: 'Web Development',
     year: 2024
@@ -60,6 +79,7 @@ export const projects: Project[] = [
     title: 'Task Management App',
     shortDescription: 'Collaborative task management application with real-time updates',
     fullDescription: 'A modern task management application similar to Trello, built with React and Firebase. Features include drag-and-drop functionality, real-time collaboration, team management, file attachments, due dates, and progress tracking. The app supports multiple project boards and team member assignments.',
+    markdownFile: 'task-management-app.md',
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=Task+Boards',
       'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Task+Details',
@@ -67,7 +87,13 @@ export const projects: Project[] = [
     ],
     url: 'https://taskmanager-demo.example.com',
     github: 'https://github.com/rizkimaulana/task-manager',
-    techStack: ['React', 'TypeScript', 'Firebase', 'Material-UI', 'React DnD'],
+    techStack: [
+      TechStack.REACT,
+      TechStack.TYPESCRIPT,
+      TechStack.FIREBASE,
+      TechStack.MATERIAL_UI,
+      TechStack.REACT_DND
+    ],
     featured: true,
     category: 'Web Development',
     year: 2024
@@ -84,7 +110,13 @@ export const projects: Project[] = [
     ],
     url: 'https://weather-analytics.example.com',
     github: 'https://github.com/rizkimaulana/weather-dashboard',
-    techStack: ['React', 'D3.js', 'TypeScript', 'Express.js', 'Weather API'],
+    techStack: [
+      TechStack.REACT,
+      TechStack.D3_JS,
+      TechStack.TYPESCRIPT,
+      TechStack.EXPRESS_JS,
+      TechStack.WEATHER_API
+    ],
     featured: true,
     category: 'Data Visualization',
     year: 2023
@@ -100,7 +132,13 @@ export const projects: Project[] = [
       'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Transfer+Money'
     ],
     github: 'https://github.com/rizkimaulana/mobile-banking',
-    techStack: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'JWT'],
+    techStack: [
+      TechStack.REACT_NATIVE,
+      TechStack.TYPESCRIPT,
+      TechStack.NODE_JS,
+      TechStack.POSTGRESQL,
+      TechStack.JWT
+    ],
     featured: false,
     category: 'Mobile Development',
     year: 2023
@@ -117,7 +155,13 @@ export const projects: Project[] = [
     ],
     url: 'https://chatbot-platform.example.com',
     github: 'https://github.com/rizkimaulana/ai-chatbot',
-    techStack: ['Python', 'TensorFlow', 'React', 'Node.js', 'MongoDB'],
+    techStack: [
+      TechStack.PYTHON,
+      TechStack.TENSORFLOW,
+      TechStack.REACT,
+      TechStack.NODE_JS,
+      TechStack.MONGODB
+    ],
     featured: false,
     category: 'AI/ML',
     year: 2023
@@ -133,7 +177,14 @@ export const projects: Project[] = [
       'https://via.placeholder.com/800x600/64b5f6/ffffff?text=System+Metrics'
     ],
     github: 'https://github.com/rizkimaulana/devops-monitor',
-    techStack: ['Go', 'React', 'Prometheus', 'Grafana', 'Docker', 'Kubernetes'],
+    techStack: [
+      TechStack.GO,
+      TechStack.REACT,
+      TechStack.PROMETHEUS,
+      TechStack.GRAFANA,
+      TechStack.DOCKER,
+      TechStack.KUBERNETES
+    ],
     featured: false,
     category: 'DevOps',
     year: 2022
@@ -154,7 +205,14 @@ export const experiences: Experience[] = [
       'Collaborate with product managers to define technical requirements',
       'Optimize application performance resulting in 40% faster load times'
     ],
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'TypeScript'],
+    techStack: [
+      TechStack.REACT,
+      TechStack.NODE_JS,
+      TechStack.POSTGRESQL,
+      TechStack.DOCKER,
+      TechStack.AWS,
+      TechStack.TYPESCRIPT
+    ],
     current: true
   },
   {
@@ -171,7 +229,13 @@ export const experiences: Experience[] = [
       'Collaborated with design team to create pixel-perfect user interfaces',
       'Participated in agile development process and sprint planning'
     ],
-    techStack: ['React', 'Express.js', 'MongoDB', 'Material-UI', 'Git'],
+    techStack: [
+      TechStack.REACT,
+      TechStack.EXPRESS_JS,
+      TechStack.MONGODB,
+      TechStack.MATERIAL_UI,
+      TechStack.GIT
+    ],
     current: false
   },
   {
@@ -188,7 +252,12 @@ export const experiences: Experience[] = [
       'Participated in daily standups and sprint retrospectives',
       'Gained experience in startup environment and rapid prototyping'
     ],
-    techStack: ['React Native', 'JavaScript', 'Firebase', 'Redux'],
+    techStack: [
+      TechStack.REACT_NATIVE,
+      TechStack.JAVASCRIPT,
+      TechStack.FIREBASE,
+      TechStack.REDUX
+    ],
     current: false
   },
   {
@@ -205,7 +274,13 @@ export const experiences: Experience[] = [
       'Teaching assistant for introductory programming courses',
       'Thesis: "Machine Learning Applications in Web Development"'
     ],
-    techStack: ['Java', 'Python', 'C++', 'SQL', 'Machine Learning'],
+    techStack: [
+      TechStack.JAVA,
+      TechStack.PYTHON,
+      TechStack.CPP,
+      TechStack.POSTGRESQL,
+      TechStack.TENSORFLOW
+    ],
     current: false
   }
 ]; 
