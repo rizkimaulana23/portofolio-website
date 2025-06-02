@@ -10,7 +10,7 @@ export const getAllTechStacks = (): TechStack[] => {
 /**
  * Get tech stacks grouped by category
  */
-export const getTechStacksByCategory = () => {
+export const getTechStacksByCategory = (): Record<string, TechStack[]> => {
   return {
     frontend: [
       TechStack.REACT,
