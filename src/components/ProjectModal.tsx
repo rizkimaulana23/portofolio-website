@@ -83,7 +83,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
       fullWidth
       PaperProps={{
         sx: {
-          borderRadius: 2,
+          borderRadius: 1,
           width: '80vw',
           height: '90vh',
           maxWidth: 'none',

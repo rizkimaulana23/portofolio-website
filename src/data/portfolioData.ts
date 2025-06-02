@@ -56,9 +56,9 @@ export const projects: Project[] = [
     fullDescription: 'A comprehensive e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. The platform supports multiple payment methods and real-time inventory management.',
     markdownFile: 'ecommerce-platform.md',
     images: [
-      'https://picsum.photos/200',
-      'https://picsum.photos/200',
-      'https://picsum.photos/200'
+      'https://picsum.photos/2000',
+      'https://picsum.photos/2000',
+      'https://picsum.photos/2000'
     ],
     url: 'https://ecommerce-demo.example.com',
     github: 'https://github.com/rizkimaulana/ecommerce-platform',
@@ -81,9 +81,9 @@ export const projects: Project[] = [
     fullDescription: 'A modern task management application similar to Trello, built with React and Firebase. Features include drag-and-drop functionality, real-time collaboration, team management, file attachments, due dates, and progress tracking. The app supports multiple project boards and team member assignments.',
     markdownFile: 'task-management-app.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=Task+Boards',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Task+Details',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Team+Dashboard'
+      'https://picsum.photos/2000',
+      'https://picsum.photos/2000',
+      'https://picsum.photos/2000'
     ],
     url: 'https://taskmanager-demo.example.com',
     github: 'https://github.com/rizkimaulana/task-manager',

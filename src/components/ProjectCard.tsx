@@ -33,9 +33,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         flexDirection: 'column',
         cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+        boxShadow: 'none',
+        outline: '0px solid #ffffff',
+        outlineOffset: '0px',
         '&:hover': {
-          transform: onClick ? 'translateY(-4px)' : 'none',
-          boxShadow: onClick ? '0 8px 25px rgba(25, 118, 210, 0.15)' : 'none',
+          transform: onClick ? 'translateY(-6px)' : 'none',
+          outline: '3px solid #ffffff',
         },
       }}
       onClick={onClick}
