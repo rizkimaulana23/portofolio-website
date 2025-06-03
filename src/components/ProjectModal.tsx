@@ -89,6 +89,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           maxWidth: 'none',
           maxHeight: 'none',
           margin: 1,
+          backgroundColor: '#000000',
         },
       }}
     >
@@ -105,9 +106,29 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
         zIndex: 1,
         backgroundColor: '#000000',
       }}>
-        <Typography variant="h4" component="h2" sx={{ fontWeight: 600 }}>
-          {project.title}
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
+          <Typography variant="h4" component="h2" sx={{ fontWeight: 600 }}>
+            {project.title}
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <Chip
+              label={project.category}
+              size="small"
+              sx={{
+                backgroundColor: 'primary.main',
+                color: 'white',
+              }}
+            />
+            <Chip
+              label={project.year}
+              size="small"
+              sx={{
+                backgroundColor: 'secondary.main',
+                color: 'white',
+              }}
+            />
+          </Box>
+        </Box>
         <IconButton
           aria-label="close"
           onClick={onClose}
@@ -117,22 +138,72 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
         </IconButton>
       </DialogTitle>
 
+      
+
       <DialogContent sx={{ 
         p: 0, 
         overflow: 'auto',
         height: 'calc(95vh - 120px)', // Subtract header height
         backgroundColor: '#000000',
       }}>
+
+        {/* Action Buttons */}
+        <Box sx={{ 
+          position: 'sticky',
+          top: 0,
+          zIndex: 10,
+          px: 4, 
+          py: 2, 
+          background: 'transparent',
+          display: 'flex', 
+          justifyContent: 'flex-end', 
+          gap: 2,
+        }}>
+          {project.url && (
+            <Button
+              variant="contained"
+              size="small"
+              startIcon={<LaunchIcon />}
+              onClick={() => handleExternalLink(project.url!)}
+              sx={{
+                borderRadius: 3,
+                textTransform: 'none',
+                fontWeight: 600,
+              }}
+            >
+              Live Demo
+            </Button>
+          )}
+          {project.github && (
+            <Button
+              variant="outlined"
+              size="small"
+              startIcon={<GitHubIcon />}
+              onClick={() => handleExternalLink(project.github!)}
+              sx={{
+                borderRadius: 3,
+                textTransform: 'none',
+                fontWeight: 600,
+              }}
+            >
+              Source Code
+            </Button>
+          )}
+        </Box>
         {/* Image Carousel */}
-        <Box sx={{ position: 'relative', mb: 4, px: 4 }}>
+        <Box sx={{ 
+          position: 'relative', 
+          mb: 4, 
+          px: { xs: 0, md: 4 }, // No padding on mobile, padding on desktop
+        }}>
           <CardMedia
             component="img"
             sx={{
-              width: '60%',
+              width: { xs: '100%', md: '60%' }, // Full width on mobile, 60% on desktop
               aspectRatio: '16/9',
               objectFit: 'cover',
-              borderRadius: 1,
-              margin: '0 auto',
+              borderRadius: { xs: 0, md: 1 }, // No border radius on mobile, rounded on desktop
+              margin: { xs: 0, md: '0 auto' }, // No margin on mobile, centered on desktop
               display: 'block',
             }}
             image={project.images[currentImageIndex]}
@@ -202,31 +273,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
               </Box>
             </>
           )}
-          
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              display: 'flex',
-              gap: 1,
-            }}
-          >
-            <Chip
-              label={project.category}
-              sx={{
-                backgroundColor: 'primary.main',
-                color: 'white',
-              }}
-            />
-            <Chip
-              label={project.year}
-              sx={{
-                backgroundColor: 'secondary.main',
-                color: 'white',
-              }}
-            />
-          </Box>
         </Box>
 
         <Box sx={{ px: 4, pb: 4, backgroundColor: '#000000' }}>
@@ -364,44 +410,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
               )}
             </>
           )}
-
-          {/* Action Buttons */}
-          <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', mt: 6 }}>
-            {project.url && (
-              <Button
-                variant="contained"
-                startIcon={<LaunchIcon />}
-                onClick={() => handleExternalLink(project.url!)}
-                sx={{
-                  borderRadius: 3,
-                  px: 4,
-                  py: 1.5,
-                  textTransform: 'none',
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                }}
-              >
-                View Live Demo
-              </Button>
-            )}
-            {project.github && (
-              <Button
-                variant="outlined"
-                startIcon={<GitHubIcon />}
-                onClick={() => handleExternalLink(project.github!)}
-                sx={{
-                  borderRadius: 3,
-                  px: 4,
-                  py: 1.5,
-                  textTransform: 'none',
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                }}
-              >
-                View Source Code
-              </Button>
-            )}
-          </Box>
         </Box>
       </DialogContent>
     </Dialog>
