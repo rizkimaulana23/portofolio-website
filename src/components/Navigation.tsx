@@ -57,22 +57,20 @@ const Navigation: React.FC = () => {
       {/* Showcase Navigation Card */}
       <Card
         sx={{
-          background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+          background: '#1D1D1D',
           backdropFilter: 'blur(20px)',
-          border: '3px solid #646cff',
+          border: '3px solid transparent',
           borderRadius: 8,
           m: 0.5, 
           px: 1,
           py: 0.5,
           display: 'flex',
           gap: 0.5,
-          transition: 'all 0.3s ease',
+          transition: 'transform 0.2s ease, border-color 0.2s ease',
           boxShadow: 'none',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: 'none',
-            border: '3px solid #646cff',
-            outline: '2px solid #ffffff',
+            borderColor: '#FF6501',
           },
         }}
       >
@@ -84,14 +82,13 @@ const Navigation: React.FC = () => {
                 color: '#ffffff',
                 width: 40,
                 height: 40,
-                transition: 'all 0.2s ease',
+                transition: 'color 0.15s ease, background-color 0.15s ease, transform 0.15s ease',
                 border: '0px solid transparent',
                 boxShadow: 'none',
                 '&:hover': {
-                  color: '#646cff',
-                  backgroundColor: 'rgba(100, 108, 255, 0.1)',
-                  transform: 'scale(1.1)',
-                  boxShadow: 'none',
+                  color: '#FF6501',
+                  backgroundColor: 'rgba(255, 101, 1, 0.1)',
+                  transform: 'scale(1.05)',
                 },
               }}
             >
@@ -104,21 +101,18 @@ const Navigation: React.FC = () => {
       {/* Projects Navigation Card */}
       <Card
         sx={{
-          background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+          background: '#1D1D1D',
           backdropFilter: 'blur(20px)',
-          border: '3px solid #646cff',
+          border: '3px solid transparent',
           borderRadius: 8,
-          outlineOffset: '0px',
           m: 0.5,
           px: 1,
           py: 0.5,
-          transition: 'all 0.3s ease',
+          transition: 'transform 0.2s ease, border-color 0.2s ease',
           boxShadow: 'none',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: 'none',
-            border: '3px solid #646cff',
-            outline: '2px solid #ffffff',
+            borderColor: '#FF6501',
           },
         }}
       >
@@ -126,18 +120,17 @@ const Navigation: React.FC = () => {
           <IconButton
             onClick={handleProjectsClick}
             sx={{
-              color: location.pathname === '/projects' ? '#646cff' : '#ffffff',
+              color: location.pathname === '/projects' ? '#FF6501' : '#ffffff',
               width: 40,
               height: 40,
-              transition: 'all 0.2s ease',
+              transition: 'color 0.15s ease, background-color 0.15s ease, transform 0.15s ease',
               borderRadius: 2,
-              backgroundColor: location.pathname === '/projects' ? 'rgba(100, 108, 255, 0.1)' : 'transparent',
+              backgroundColor: location.pathname === '/projects' ? 'rgba(255, 101, 1, 0.1)' : 'transparent',
               boxShadow: 'none',
               '&:hover': {
-                color: '#646cff',
-                backgroundColor: 'rgba(100, 108, 255, 0.1)',
-                transform: 'scale(1.1)',
-                boxShadow: 'none',
+                color: '#FF6501',
+                backgroundColor: 'rgba(255, 101, 1, 0.1)',
+                transform: 'scale(1.05)',
               },
             }}
           >

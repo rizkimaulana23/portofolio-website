@@ -75,14 +75,12 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
               sx={{
                 maxWidth: 400,
                 transition: 'transform 0.2s ease-in-out',
-                border: '3px solid #646cff',
-                outline: '2px solid #ffffff',
+                border: '3px solid #FF6501',
                 outlineOffset: '0px',
                 boxShadow: 'none',
                 '&:hover': {
                   transform: 'translateY(-2px)',
-                  border: '3px solid #646cff',
-                  outline: '2px solid #ffffff',
+                  border: '3px solid #FF6501',
                 },
               }}
             >

@@ -34,11 +34,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
         boxShadow: 'none',
-        outline: '0px solid #ffffff',
         outlineOffset: '0px',
         '&:hover': {
           transform: onClick ? 'translateY(-6px)' : 'none',
-          outline: '3px solid #ffffff',
         },
       }}
       onClick={onClick}
@@ -46,10 +44,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       <Box sx={{ position: 'relative' }}>
         <CardMedia
           component="img"
-          height="240"
           image={project.images[0]}
           alt={project.title}
           sx={{
+            aspectRatio: '16/9',
             objectFit: 'cover',
           }}
         />

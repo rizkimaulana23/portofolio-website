@@ -4,9 +4,9 @@ export const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#646cff', // Blue
-      light: '#8087ff', // Light blue
-      dark: '#4850cc',
+      main: '#FF6501', // Orange
+      light: '#FF8533', // Light orange
+      dark: '#CC5100',
     },
     secondary: {
       main: '#ff6b6b', // Red accent
@@ -69,8 +69,8 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%)',
-          borderRadius: 12,
+          background: '#1D1D1D',
+          borderRadius: 10,
           boxShadow: 'none',
         },
       },
