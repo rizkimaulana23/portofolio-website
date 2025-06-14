@@ -51,177 +51,112 @@ export const personalInfo: PersonalInfo = {
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'E-Commerce Platform',
-    shortDescription: 'Full-stack e-commerce solution with modern UI and payment integration',
-    fullDescription: 'A comprehensive e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. The platform supports multiple payment methods and real-time inventory management.',
-    markdownFile: 'ecommerce-platform.md',
+    title: 'ArtSI',
+    shortDescription: 'Talent and Project Management System for Social Media Agency',
+    fullDescription: 'A comprehensive information system designed specifically for social media agencies to streamline their talent and project management workflows. The platform features robust modules for Talent Management, Client Relations, Project Tracking, Financial Management, Content Submission, and Content Management. Built to handle the fast-paced environment of social media agencies, the system efficiently manages tight deadlines and frequent content revisions while maintaining clear communication channels between team members and clients.',
+    markdownFile: 'artsi.md',
     images: [
-      'https://picsum.photos/2000',
-      'https://picsum.photos/2000',
-      'https://picsum.photos/2000'
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    url: 'https://ecommerce-demo.example.com',
-    github: 'https://github.com/rizkimaulana/ecommerce-platform',
+    github: 'https://github.com/rizkimaulana23/artsi',
     techStack: [
       TechStack.REACT,
-      TechStack.TYPESCRIPT,
-      TechStack.NODE_JS,
       TechStack.POSTGRESQL,
-      TechStack.STRIPE_API,
-      TechStack.DOCKER
+      TechStack.NODE_JS,
+      TechStack.TYPESCRIPT,
     ],
     featured: true,
     category: 'Web Development',
-    year: 2024
+    year: 2025
   },
   {
     id: '2',
-    title: 'Task Management App',
-    shortDescription: 'Collaborative task management application with real-time updates',
-    fullDescription: 'A modern task management application similar to Trello, built with React and Firebase. Features include drag-and-drop functionality, real-time collaboration, team management, file attachments, due dates, and progress tracking. The app supports multiple project boards and team member assignments.',
-    markdownFile: 'task-management-app.md',
+    title: 'Sistem Informasi Pasar Merdeka',
+    shortDescription: 'Traditional Market Information System for monitoring traditional market, infrastructure, food types, stock changes traditional market in Jakarta.',
+    fullDescription: 'A comprehensive information system designed specifically for social media agencies to streamline their talent and project management workflows. The platform features robust modules for Talent Management, Client Relations, Project Tracking, Financial Management, Content Submission, and Content Management. Built to handle the fast-paced environment of social media agencies, the system efficiently manages tight deadlines and frequent content revisions while maintaining clear communication channels between team members and clients.',
+    markdownFile: 'artsi.md',
     images: [
-      'https://picsum.photos/2000',
-      'https://picsum.photos/2000',
-      'https://picsum.photos/2000'
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    url: 'https://taskmanager-demo.example.com',
-    github: 'https://github.com/rizkimaulana/task-manager',
+    github: 'https://github.com/rizkimaulana23/artsi',
     techStack: [
-      TechStack.REACT,
-      TechStack.TYPESCRIPT,
-      TechStack.FIREBASE,
-      TechStack.MATERIAL_UI,
-      TechStack.REACT_DND
+      TechStack.POSTGRESQL,
+      TechStack.JAVA,
+      TechStack.SPRING
     ],
     featured: true,
     category: 'Web Development',
-    year: 2024
+    year: 2025
   },
   {
     id: '3',
-    title: 'Weather Analytics Dashboard',
-    shortDescription: 'Real-time weather data visualization and analytics platform',
-    fullDescription: 'A comprehensive weather analytics dashboard that aggregates data from multiple weather APIs. Features interactive charts, historical data analysis, weather forecasting, and location-based weather tracking. Built with modern data visualization libraries and responsive design.',
+    title: 'Pet Clinic',
+    shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
+    fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
+    markdownFile: 'petclinic.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=Weather+Dashboard',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Analytics+Charts',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Forecast+View'
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    url: 'https://weather-analytics.example.com',
-    github: 'https://github.com/rizkimaulana/weather-dashboard',
+    github: 'https://github.com/rizkimaulana23/petclinic',
     techStack: [
-      TechStack.REACT,
-      TechStack.D3_JS,
       TechStack.TYPESCRIPT,
       TechStack.EXPRESS_JS,
-      TechStack.WEATHER_API
+      TechStack.REACT,
+      TechStack.POSTGRESQL
     ],
     featured: true,
-    category: 'Data Visualization',
-    year: 2023
+    category: 'Web Development',
+    year: 2025
   },
   {
     id: '4',
-    title: 'Mobile Banking App',
-    shortDescription: 'Secure mobile banking application with biometric authentication',
-    fullDescription: 'A secure mobile banking application built with React Native. Features include biometric authentication, account balance tracking, transaction history, money transfers, bill payments, and QR code payments. The app implements advanced security measures and follows banking industry standards.',
+    title: 'KALM',
+    shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
+    fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
+    markdownFile: 'petclinic.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=Banking+Home',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Transaction+History',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Transfer+Money'
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana/mobile-banking',
+    github: 'https://github.com/rizkimaulana23/petclinic',
     techStack: [
-      TechStack.REACT_NATIVE,
       TechStack.TYPESCRIPT,
-      TechStack.NODE_JS,
-      TechStack.POSTGRESQL,
-      TechStack.JWT
+      TechStack.EXPRESS_JS,
+      TechStack.REACT,
+      TechStack.POSTGRESQL
     ],
-    featured: false,
-    category: 'Mobile Development',
-    year: 2023
+    featured: true,
+    category: 'UI/UX',
+    year: 2025
   },
   {
     id: '5',
-    title: 'AI Chatbot Platform',
-    shortDescription: 'Intelligent chatbot platform with natural language processing',
-    fullDescription: 'An AI-powered chatbot platform that can be integrated into websites and applications. Features include natural language processing, intent recognition, multi-language support, conversation flow management, and analytics dashboard. Built with machine learning capabilities for continuous improvement.',
+    title: 'The Lucent Quarter CRM',
+    shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
+    fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
+    markdownFile: 'petclinic.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=Chatbot+Interface',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Admin+Dashboard',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=Analytics+View'
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    url: 'https://chatbot-platform.example.com',
-    github: 'https://github.com/rizkimaulana/ai-chatbot',
+    github: 'https://github.com/rizkimaulana23/petclinic',
     techStack: [
-      TechStack.PYTHON,
-      TechStack.TENSORFLOW,
+      TechStack.TYPESCRIPT,
+      TechStack.EXPRESS_JS,
       TechStack.REACT,
-      TechStack.NODE_JS,
-      TechStack.MONGODB
+      TechStack.POSTGRESQL
     ],
-    featured: false,
-    category: 'AI/ML',
-    year: 2023
-  },
-  {
-    id: '6',
-    title: 'DevOps Monitoring Tool',
-    shortDescription: 'Comprehensive monitoring and alerting system for DevOps teams',
-    fullDescription: 'A comprehensive monitoring and alerting system for DevOps teams. Features include server monitoring, application performance monitoring, log aggregation, alert management, and custom dashboards. The tool integrates with popular DevOps tools and provides real-time insights into system health.',
-    images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=Monitoring+Dashboard',
-      'https://via.placeholder.com/800x600/42a5f5/ffffff?text=Alert+Management',
-      'https://via.placeholder.com/800x600/64b5f6/ffffff?text=System+Metrics'
-    ],
-    github: 'https://github.com/rizkimaulana/devops-monitor',
-    techStack: [
-      TechStack.GO,
-      TechStack.REACT,
-      TechStack.PROMETHEUS,
-      TechStack.GRAFANA,
-      TechStack.DOCKER,
-      TechStack.KUBERNETES
-    ],
-    featured: false,
-    category: 'DevOps',
-    year: 2022
+    featured: true,
+    category: 'UI/UX',
+    year: 2025
   }
 ];
 
 export const experiences: Experience[] = [
   {
-    id: '1',
-    title: 'Senior Software Engineer',
-    company: 'Tech Innovators Indonesia',
-    location: 'Jakarta, Indonesia',
-    startDate: '2023-01',
-    description: [
-      'Lead development of scalable web applications serving 100k+ users',
-      'Architect and implement microservices using Node.js and Docker',
-      'Mentor junior developers and conduct code reviews',
-      'Collaborate with product managers to define technical requirements',
-      'Optimize application performance resulting in 40% faster load times'
-    ],
-    techStack: [
-      TechStack.REACT,
-      TechStack.NODE_JS,
-      TechStack.POSTGRESQL,
-      TechStack.DOCKER,
-      TechStack.AWS,
-      TechStack.TYPESCRIPT
-    ],
-    current: true
-  },
-  {
     id: '2',
-    title: 'Full Stack Developer',
-    company: 'Digital Solutions PT',
+    title: 'Lead Developer Contract Project',
+    company: 'PT Arteva Kreative Agensi',
     location: 'Jakarta, Indonesia',
-    startDate: '2021-06',
-    endDate: '2022-12',
+    startDate: '2025-02',
     description: [
       'Developed and maintained multiple client projects using modern web technologies',
       'Built responsive web applications with React and Material-UI',
@@ -240,11 +175,10 @@ export const experiences: Experience[] = [
   },
   {
     id: '3',
-    title: 'Software Engineering Intern',
-    company: 'Startup Accelerator',
-    location: 'Jakarta, Indonesia',
-    startDate: '2020-07',
-    endDate: '2021-05',
+    title: 'Full Stack Developer Intern',
+    company: 'Pusat Ilmu Komputer Indonesia',
+    location: 'Depok, Indonesia',
+    startDate: '2025-01',
     description: [
       'Contributed to the development of MVP for early-stage startup',
       'Learned modern development practices and methodologies',
@@ -265,21 +199,16 @@ export const experiences: Experience[] = [
     title: 'Computer Science Student',
     company: 'Fakultas Ilmu Komputer, Universitas Indonesia',
     location: 'Depok, Indonesia',
-    startDate: '2018-08',
-    endDate: '2022-07',
+    startDate: '2022-08',
     description: [
-      'Bachelor of Computer Science with focus on Software Engineering',
-      'Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering',
-      'Active member of programming club and hackathon participant',
-      'Teaching assistant for introductory programming courses',
-      'Thesis: "Machine Learning Applications in Web Development"'
+      'Bachelor of Computer Science with focus on information systems',
+      'Relevant coursework: Data Structures, Algorithms, Database Systems, Software Design, Software Engineering',
+      'Teaching assistant for introductory programming courses'
     ],
     techStack: [
       TechStack.JAVA,
       TechStack.PYTHON,
-      TechStack.CPP,
       TechStack.POSTGRESQL,
-      TechStack.TENSORFLOW
     ],
     current: false
   }

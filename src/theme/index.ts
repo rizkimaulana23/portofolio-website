@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
       main: '#FF6501', // Orange
       light: '#FF8533', // Light orange
@@ -14,52 +14,52 @@ export const theme = createTheme({
       dark: '#cc5555',
     },
     background: {
-      default: '#010101', // Black background
-      paper: '#1a1a1a', // Dark gray for cards
+      default: '#ffffff', // White background
+      paper: '#f5f5f5', // Light gray for cards
     },
     text: {
-      primary: '#ffffff', // White text
-      secondary: '#cccccc', // Light gray
+      primary: '#333333', // Dark gray text
+      secondary: '#666666', // Medium gray
     },
-    divider: '#333333',
+    divider: '#e0e0e0',
   },
   typography: {
     fontFamily: '"Poppins", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
       fontSize: '3rem',
       fontWeight: 700,
-      color: '#ffffff',
+      color: '#333333',
     },
     h2: {
       fontSize: '2.5rem',
       fontWeight: 600,
-      color: '#ffffff',
+      color: '#333333',
     },
     h3: {
       fontSize: '2rem',
       fontWeight: 600,
-      color: '#ffffff',
+      color: '#333333',
     },
     h4: {
       fontSize: '1.5rem',
       fontWeight: 500,
-      color: '#ffffff',
+      color: '#333333',
     },
     h5: {
       fontSize: '1.25rem',
       fontWeight: 500,
-      color: '#ffffff',
+      color: '#333333',
     },
     h6: {
       fontSize: '1rem',
       fontWeight: 500,
-      color: '#ffffff',
+      color: '#333333',
     },
     body1: {
-      color: '#cccccc',
+      color: '#666666',
     },
     body2: {
-      color: '#cccccc',
+      color: '#666666',
     },
   },
   shape: {
@@ -69,9 +69,9 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: '#1D1D1D',
+          background: '#ffffff',
           borderRadius: 10,
-          boxShadow: 'none',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         },
       },
     },
@@ -87,9 +87,9 @@ export const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: 'rgba(0, 0, 0, 0.95)',
+          background: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(10px)',
-          borderBottom: '1px solid #333333',
+          borderBottom: '1px solid #e0e0e0',
         },
       },
     },

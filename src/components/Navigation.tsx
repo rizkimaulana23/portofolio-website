@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
       {/* Showcase Navigation Card */}
       <Card
         sx={{
-          background: '#1D1D1D',
+          background: '#ffffff',
           backdropFilter: 'blur(20px)',
           border: '3px solid transparent',
           borderRadius: 8,
@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
           display: 'flex',
           gap: 0.5,
           transition: 'transform 0.2s ease, border-color 0.2s ease',
-          boxShadow: 'none',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           '&:hover': {
             transform: 'translateY(-2px)',
             borderColor: '#FF6501',
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
             <IconButton
               onClick={() => scrollToSection(button.id)}
               sx={{
-                color: '#ffffff',
+                color: '#333333',
                 width: 40,
                 height: 40,
                 transition: 'color 0.15s ease, background-color 0.15s ease, transform 0.15s ease',
@@ -101,7 +101,7 @@ const Navigation: React.FC = () => {
       {/* Projects Navigation Card */}
       <Card
         sx={{
-          background: '#1D1D1D',
+          background: '#ffffff',
           backdropFilter: 'blur(20px)',
           border: '3px solid transparent',
           borderRadius: 8,
@@ -109,7 +109,7 @@ const Navigation: React.FC = () => {
           px: 1,
           py: 0.5,
           transition: 'transform 0.2s ease, border-color 0.2s ease',
-          boxShadow: 'none',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           '&:hover': {
             transform: 'translateY(-2px)',
             borderColor: '#FF6501',
@@ -120,7 +120,7 @@ const Navigation: React.FC = () => {
           <IconButton
             onClick={handleProjectsClick}
             sx={{
-              color: location.pathname === '/projects' ? '#FF6501' : '#ffffff',
+              color: location.pathname === '/projects' ? '#FF6501' : '#333333',
               width: 40,
               height: 40,
               transition: 'color 0.15s ease, background-color 0.15s ease, transform 0.15s ease',

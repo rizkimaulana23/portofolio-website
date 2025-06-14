@@ -53,10 +53,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
             color="text.secondary"
           >
             <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-              {getDateRange(experience.startDate, experience.endDate)}
-            </Typography>
-            <Typography variant="body2">
-              {experience.location}
+              {formatDate(experience.startDate)}
             </Typography>
           </TimelineOppositeContent>
           
@@ -77,7 +74,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
                 transition: 'transform 0.2s ease-in-out',
                 border: '3px solid #FF6501',
                 outlineOffset: '0px',
-                boxShadow: 'none',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 '&:hover': {
                   transform: 'translateY(-2px)',
                   border: '3px solid #FF6501',
@@ -89,8 +86,12 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
                   {experience.title}
                 </Typography>
                 
-                <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 500, mb: 2 }}>
+                <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 500, mb: 1 }}>
                   {experience.company}
+                </Typography>
+
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  {experience.location}
                 </Typography>
                 
                 <Box sx={{ mb: 2 }}>

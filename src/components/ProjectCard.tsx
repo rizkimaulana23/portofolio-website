@@ -32,11 +32,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         display: 'flex',
         flexDirection: 'column',
         cursor: onClick ? 'pointer' : 'default',
-        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-        boxShadow: 'none',
-        outlineOffset: '0px',
+        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+        border: '3px solid transparent',
         '&:hover': {
           transform: onClick ? 'translateY(-6px)' : 'none',
+          borderColor: '#FF6501',
         },
       }}
       onClick={onClick}
@@ -70,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           {project.title}
         </Typography>
         
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2, textAlign: 'center' }}>
           {project.shortDescription}
         </Typography>
         

@@ -89,7 +89,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           maxWidth: 'none',
           maxHeight: 'none',
           margin: 1,
-          backgroundColor: '#000000',
+          backgroundColor: '#ffffff',
         },
       }}
     >
@@ -104,7 +104,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
         position: 'sticky',
         top: 0,
         zIndex: 1,
-        backgroundColor: '#000000',
+        backgroundColor: '#ffffff',
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
           <Typography variant="h4" component="h2" sx={{ fontWeight: 600 }}>
@@ -144,7 +144,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
         p: 0, 
         overflow: 'auto',
         height: 'calc(95vh - 120px)', // Subtract header height
-        backgroundColor: '#000000',
+        backgroundColor: '#ffffff',
       }}>
 
         {/* Action Buttons */}
@@ -195,6 +195,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           position: 'relative', 
           mb: 4, 
           px: { xs: 0, md: 4 }, // No padding on mobile, padding on desktop
+          backgroundColor: '#ffffff'
         }}>
           <CardMedia
             component="img"
@@ -275,17 +276,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           )}
         </Box>
 
-        <Box sx={{ px: 4, pb: 4, backgroundColor: '#000000' }}>
+        <Box sx={{ px: 4, pb: 4, backgroundColor: '#ffffff' }}>
           {/* Description */}
-          <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#ffffff' }}>
+          <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#333333' }}>
             About This Project
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 4, lineHeight: 1.7, fontSize: '1.1rem', color: '#ffffff' }}>
+          <Typography variant="body1" paragraph sx={{ mb: 4, lineHeight: 1.7, fontSize: '1.1rem', color: '#333333' }}>
             {project.fullDescription}
           </Typography>
 
           {/* Tech Stack */}
-          <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#ffffff' }}>
+          <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#333333' }}>
             Technology Stack
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mb: 4 }}>
@@ -307,7 +308,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           {project.markdownFile && (
             <>
               <Divider sx={{ my: 4 }} />
-              <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#ffffff' }}>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, color: '#333333' }}>
                 Detailed Description
               </Typography>
               
@@ -317,14 +318,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
                 </Box>
               ) : markdownContent ? (
                 <Box sx={{  
-                  backgroundColor: '#000000',
-                  color: '#ffffff',
+                  backgroundColor: '#ffffff',
+                  color: '#333333',
                   '& h1, & h2, & h3, & h4, & h5, & h6': {
                     fontFamily: 'inherit',
                     fontWeight: 600,
                     marginTop: 2,
                     marginBottom: 1,
-                    color: '#ffffff',
+                    color: '#333333',
                   },
                   '& h1': { fontSize: '2rem' },
                   '& h2': { fontSize: '1.75rem' },
@@ -336,16 +337,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
                     marginBottom: 2,
                     lineHeight: 1.7,
                     fontSize: '1rem',
-                    color: '#ffffff',
+                    color: '#333333',
                   },
                   '& ul, & ol': {
                     marginBottom: 2,
                     paddingLeft: 3,
-                    color: '#ffffff',
+                    color: '#333333',
                   },
                   '& li': {
                     marginBottom: 0.5,
-                    color: '#ffffff',
+                    color: '#333333',
                   },
                   '& img': {
                     maxWidth: '100%',
@@ -359,21 +360,21 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
                     paddingLeft: 2,
                     marginY: 2,
                     fontStyle: 'italic',
-                    backgroundColor: '#1a1a1a',
-                    color: '#ffffff',
+                    backgroundColor: '#f5f5f5',
+                    color: '#333333',
                     py: 1,
                   },
                   '& code': {
-                    backgroundColor: '#1a1a1a',
-                    color: '#ffffff',
+                    backgroundColor: '#f5f5f5',
+                    color: '#333333',
                     padding: '2px 4px',
                     borderRadius: 1,
                     fontSize: '0.875rem',
                     fontFamily: 'monospace',
                   },
                   '& pre': {
-                    backgroundColor: '#1a1a1a',
-                    color: '#ffffff',
+                    backgroundColor: '#f5f5f5',
+                    color: '#333333',
                     padding: 2,
                     borderRadius: 1,
                     overflow: 'auto',
@@ -389,10 +390,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
                     borderColor: 'divider',
                     padding: 1,
                     textAlign: 'left',
-                    color: '#ffffff',
+                    color: '#333333',
                   },
                   '& th': {
-                    backgroundColor: '#1a1a1a',
+                    backgroundColor: '#f5f5f5',
                     fontWeight: 600,
                   },
                 }}>
