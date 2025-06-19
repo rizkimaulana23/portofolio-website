@@ -1,5 +1,13 @@
 import type { PersonalInfo, Project, Experience } from '../types';
 import { TechStack } from '../types';
+import { RepositoryType } from '../types';
+
+// Helper function to get unique tech stacks from projects
+const getUniqueTechStacksFromProjects = (projects: Project[]): TechStack[] => {
+  const allTechStacks = projects.flatMap(project => project.techStack);
+  const uniqueTechStacks = Array.from(new Set(allTechStacks));
+  return uniqueTechStacks.sort((a, b) => a.localeCompare(b));
+};
 
 export const personalInfo: PersonalInfo = {
   name: 'Rizki Maulana',
@@ -9,43 +17,30 @@ export const personalInfo: PersonalInfo = {
   contacts: [
     {
       type: 'email',
-      label: 'rizki.maulana@email.com',
-      url: 'mailto:rizki.maulana@email.com',
+      label: 'rizki.maulana12@ui.ac.id',
+      url: 'mailto:rizki.maulana23@ui.ac.id',
       icon: 'Email'
     },
     {
       type: 'linkedin',
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/rizki-maulana',
+      url: 'https://linkedin.com/in/rizmau',
       icon: 'LinkedIn'
     },
     {
       type: 'github',
       label: 'GitHub',
-      url: 'https://github.com/rizkimaulana',
+      url: 'https://github.com/rizkimaulana23',
       icon: 'GitHub'
     },
     {
       type: 'twitter',
       label: 'Twitter',
-      url: 'https://twitter.com/rizkimaulana',
+      url: 'https://twitter.com/wftRizki',
       icon: 'Twitter'
     }
   ],
-  techStacks: [
-    TechStack.JAVASCRIPT,
-    TechStack.TYPESCRIPT,
-    TechStack.REACT,
-    TechStack.NODE_JS,
-    TechStack.PYTHON,
-    TechStack.JAVA,
-    TechStack.POSTGRESQL,
-    TechStack.MONGODB,
-    TechStack.DOCKER,
-    TechStack.AWS,
-    TechStack.GIT,
-    TechStack.NEXT_JS
-  ]
+  techStacks: [] // Will be populated dynamically
 };
 
 export const projects: Project[] = [
@@ -58,7 +53,18 @@ export const projects: Project[] = [
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana23/artsi',
+    repositories: [
+      {
+        label: 'Frontend',
+        url: 'https://github.com/rizkimaulana23/artsi-frontend',
+        type: RepositoryType.GITHUB
+      },
+      {
+        label: 'Backend',
+        url: 'https://github.com/rizkimaulana23/artsi-backend',
+        type: RepositoryType.GITHUB
+      }
+    ],
     techStack: [
       TechStack.REACT,
       TechStack.POSTGRESQL,
@@ -78,7 +84,13 @@ export const projects: Project[] = [
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana23/artsi',
+    repositories: [
+      {
+        label: 'Source Code',
+        url: 'https://github.com/rizkimaulana23/artsi',
+        type: RepositoryType.GITHUB
+      }
+    ],
     techStack: [
       TechStack.POSTGRESQL,
       TechStack.JAVA,
@@ -97,7 +109,13 @@ export const projects: Project[] = [
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana23/petclinic',
+    repositories: [
+      {
+        label: 'Source Code',
+        url: 'https://github.com/rizkimaulana23/petclinic',
+        type: RepositoryType.GITHUB
+      }
+    ],
     techStack: [
       TechStack.TYPESCRIPT,
       TechStack.EXPRESS_JS,
@@ -117,7 +135,13 @@ export const projects: Project[] = [
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana23/petclinic',
+    repositories: [
+      {
+        label: 'Figma Design',
+        url: 'https://figma.com/file/your-figma-file',
+        type: RepositoryType.FIGMA
+      }
+    ],
     techStack: [
       TechStack.TYPESCRIPT,
       TechStack.EXPRESS_JS,
@@ -137,7 +161,39 @@ export const projects: Project[] = [
     images: [
       'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
     ],
-    github: 'https://github.com/rizkimaulana23/petclinic',
+    repositories: [
+      {
+        label: 'Source Code',
+        url: 'https://github.com/rizkimaulana23/petclinic',
+        type: RepositoryType.GITHUB
+      }
+    ],
+    techStack: [
+      TechStack.TYPESCRIPT,
+      TechStack.EXPRESS_JS,
+      TechStack.REACT,
+      TechStack.POSTGRESQL
+    ],
+    featured: true,
+    category: 'UI/UX',
+    year: 2025
+  }, 
+  {
+    id: '6',
+    title: 'SiAsisten Remake',
+    shortDescription: 'The remake of Faculty of Computer Science SiAsisten for learning Spring Boot. This application serves the front-end and the back-end.',
+    fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
+    markdownFile: 'siasisten-remake.md',
+    images: [
+      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
+    ],
+    repositories: [
+      {
+        label: 'Source Code',
+        url: 'https://github.com/rizkimaulana23/petclinic',
+        type: RepositoryType.GITHUB
+      }
+    ],
     techStack: [
       TechStack.TYPESCRIPT,
       TechStack.EXPRESS_JS,
@@ -149,6 +205,9 @@ export const projects: Project[] = [
     year: 2025
   }
 ];
+
+// Dynamically set techStacks based on projects
+personalInfo.techStacks = getUniqueTechStacksFromProjects(projects);
 
 export const experiences: Experience[] = [
   {

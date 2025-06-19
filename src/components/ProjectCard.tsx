@@ -11,7 +11,10 @@ import {
 } from '@mui/material';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import type { Project } from '../types';
+import BrushIcon from '@mui/icons-material/Brush';
+import PaletteIcon from '@mui/icons-material/Palette';
+import type { Project, RepositoryType } from '../types';
+import { RepositoryType as RepoType } from '../types';
 
 interface ProjectCardProps {
   project: Project;
@@ -22,6 +25,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   const handleExternalLink = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const getRepositoryIcon = (type: RepositoryType) => {
+    switch (type) {
+      case RepoType.GITHUB:
+        return <GitHubIcon />;
+      case RepoType.FIGMA:
+        return <BrushIcon />;
+      case RepoType.BEHANCE:
+      case RepoType.DRIBBBLE:
+        return <PaletteIcon />;
+      default:
+        return <LaunchIcon />;
+    }
   };
 
   return (
@@ -71,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           {project.title}
         </Typography>
         
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2, textAlign: 'center' }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2, textAlign: 'left' }}>
           {project.shortDescription}
         </Typography>
         
@@ -103,7 +120,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       </CardContent>
 
       <CardActions sx={{ pt: 0, px: 2, pb: 2 }}>
-        <Box sx={{ display: 'flex', gap: 1, width: '100%' }}>
+        <Box sx={{ display: 'flex', gap: 1, width: '100%', flexWrap: 'wrap' }}>
           {project.url && (
             <Button
               size="small"
@@ -114,16 +131,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               Live Demo
             </Button>
           )}
-          {project.github && (
+          {project.repositories.map((repo) => (
             <Button
+              key={repo.url}
               size="small"
-              startIcon={<GitHubIcon />}
-              onClick={(e) => handleExternalLink(e, project.github!)}
+              startIcon={getRepositoryIcon(repo.type)}
+              onClick={(e) => handleExternalLink(e, repo.url)}
               sx={{ textTransform: 'none' }}
             >
-              GitHub
+              {repo.label}
             </Button>
-          )}
+          ))}
         </Box>
       </CardActions>
     </Card>

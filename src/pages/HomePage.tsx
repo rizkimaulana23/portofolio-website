@@ -3,9 +3,7 @@ import {
   Container,
   Typography,
   Box,
-  Chip,
   Button,
-  Avatar,
   Divider,
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
@@ -16,6 +14,7 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import ProjectCard from '../components/ProjectCard';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import ProjectModal from '../components/ProjectModal';
+import TechStackCarousel from '../components/TechStackCarousel';
 import { personalInfo, projects, experiences } from '../data/portfolioData';
 import type { ModalState } from '../types';
 
@@ -70,10 +69,16 @@ const HomePage: React.FC = () => {
             justifyContent: 'space-between',
             flexDirection: { xs: 'column', md: 'row' },
             gap: { xs: 4, md: 8 },
-            py: { xs: 8, md: 4 }
+            py: { xs: 8, md: 4 },
           }}>
             {/* Left side - Text content */}
-            <Box id="about" sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
+            <Box id="about" sx={{ 
+              flex: 1, 
+              textAlign: { xs: 'center', md: 'left' },
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
+            }}>
               <Typography 
                 variant="h3" 
                 component="h1" 
@@ -150,20 +155,26 @@ const HomePage: React.FC = () => {
               flex: '0 0 auto',
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              height: '300px'
             }}>
-              <Avatar
+              <Box
                 sx={{
-                  width: { xs: 200, md: 250 },
-                  height: { xs: 200, md: 250 },
+                  width: { xs: 300, md: 250 },
+                  height: { xs: 300, md: '100%' },
                   background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   fontSize: { xs: '4rem', md: '5rem' },
                   fontWeight: 700,
                   boxShadow: '0 20px 40px rgba(25, 118, 210, 0.3)',
+                  borderRadius: 2,
+                  color: 'white'
                 }}
               >
                 {personalInfo.name.split(' ').map(n => n[0]).join('')}
-              </Avatar>
+              </Box>
             </Box>
           </Box>
         </Container>
@@ -175,29 +186,7 @@ const HomePage: React.FC = () => {
           <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
             Tech Stack & Skills
           </Typography>
-          <Box sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 1, 
-            justifyContent: 'center',
-            maxWidth: 800,
-            mx: 'auto'
-          }}>
-            {personalInfo.techStacks.map((tech) => (
-              <Chip
-                key={tech}
-                label={tech}
-                variant="outlined"
-                sx={{ 
-                  fontWeight: 500,
-                  '&:hover': {
-                    backgroundColor: 'primary.main',
-                    color: 'white',
-                  }
-                }}
-              />
-            ))}
-          </Box>
+          <TechStackCarousel techStacks={personalInfo.techStacks} />
         </Box>
       </Container>
 

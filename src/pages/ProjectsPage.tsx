@@ -92,7 +92,7 @@ const ProjectsPage: React.FC = () => {
           All Projects
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-          Explore my complete portfolio of projects, from web applications to mobile apps and everything in between.
+          Explore my complete portfolio of projects, from web applications to UI/UX design and everything in between.
         </Typography>
       </Box>
 

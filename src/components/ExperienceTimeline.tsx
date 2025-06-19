@@ -36,12 +36,6 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
     return <WorkIcon />;
   };
 
-  const getDateRange = (startDate: string, endDate?: string) => {
-    const start = formatDate(startDate);
-    const end = endDate ? formatDate(endDate) : 'Present';
-    return `${start} - ${end}`;
-  };
-
   return (
     <Timeline position="alternate">
       {experiences.map((experience, index) => (

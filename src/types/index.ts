@@ -106,6 +106,22 @@ export const TechStack = {
 // Create a union type from the const object values
 export type TechStack = typeof TechStack[keyof typeof TechStack];
 
+export const RepositoryType = {
+  GITHUB: 'github',
+  FIGMA: 'figma',
+  BEHANCE: 'behance',
+  DRIBBBLE: 'dribbble',
+  OTHER: 'other'
+} as const;
+
+export type RepositoryType = typeof RepositoryType[keyof typeof RepositoryType];
+
+export interface Repository {
+  label: string;
+  url: string;
+  type: RepositoryType;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -114,7 +130,7 @@ export interface Project {
   markdownFile?: string;
   images: string[];
   url?: string;
-  github?: string;
+  repositories: Repository[];
   techStack: TechStack[];
   featured: boolean;
   category: string;

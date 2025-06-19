@@ -17,10 +17,13 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import BrushIcon from '@mui/icons-material/Brush';
+import PaletteIcon from '@mui/icons-material/Palette';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import type { Project } from '../types';
+import type { Project, RepositoryType } from '../types';
+import { RepositoryType as RepoType } from '../types';
 import { loadMarkdownContent } from '../utils/markdownLoader';
 
 interface ProjectModalProps {
@@ -73,6 +76,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
 
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const getRepositoryIcon = (type: RepositoryType) => {
+    switch (type) {
+      case RepoType.GITHUB:
+        return <GitHubIcon />;
+      case RepoType.FIGMA:
+        return <BrushIcon />;
+      case RepoType.BEHANCE:
+      case RepoType.DRIBBBLE:
+        return <PaletteIcon />;
+      default:
+        return <LaunchIcon />;
+    }
   };
 
   return (
@@ -158,6 +175,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           display: 'flex', 
           justifyContent: 'flex-end', 
           gap: 2,
+          flexWrap: 'wrap'
         }}>
           {project.url && (
             <Button
@@ -174,21 +192,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
               Live Demo
             </Button>
           )}
-          {project.github && (
+          {project.repositories.map((repo) => (
             <Button
+              key={repo.url}
               variant="outlined"
               size="small"
-              startIcon={<GitHubIcon />}
-              onClick={() => handleExternalLink(project.github!)}
+              startIcon={getRepositoryIcon(repo.type)}
+              onClick={() => handleExternalLink(repo.url)}
               sx={{
                 borderRadius: 3,
                 textTransform: 'none',
                 fontWeight: 600,
               }}
             >
-              Source Code
+              {repo.label}
             </Button>
-          )}
+          ))}
         </Box>
         {/* Image Carousel */}
         <Box sx={{ 
