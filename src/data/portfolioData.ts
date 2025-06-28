@@ -111,9 +111,7 @@ export const projects: Project[] = [
     shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
     fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
     markdownFile: 'petclinic.md',
-    images: [
-      ''
-    ],
+    images: [],
     repositories: [
       {
         label: 'Source Code',

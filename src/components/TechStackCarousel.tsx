@@ -169,7 +169,7 @@ const TechStackCarousel: React.FC<TechStackCarouselProps> = ({ techStacks }) => 
           sx={{
             display: 'flex',
             gap: 2,
-            px: 2,
+            px: 0,
           }}
         >
           {techStacks.map((tech, index) => (
