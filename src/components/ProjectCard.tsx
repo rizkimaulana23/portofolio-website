@@ -59,13 +59,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       }}
       onClick={onClick}
     >
-      <Box sx={{ position: 'relative' }}>
+      <Box 
+        sx={{ 
+          position: 'relative',
+          aspectRatio: '16/9',
+          overflow: 'hidden',
+        }}
+      >
         <CardMedia
           component="img"
           image={project.images[0]}
           alt={project.title}
           sx={{
-            aspectRatio: '16/9',
+            width: '100%',
+            height: '100%',
             objectFit: 'cover',
           }}
         />

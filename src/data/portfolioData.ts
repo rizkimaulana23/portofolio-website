@@ -2,6 +2,10 @@ import type { PersonalInfo, Project, Experience } from '../types';
 import { TechStack } from '../types';
 import { RepositoryType } from '../types';
 
+// Import ArtSI images
+import artsiFinanceImage from '../../public/images/artsi/Finance-Management-Feature.png';
+import artsiContentImage from '../../public/images/artsi/Content-Management-Feature.png';
+
 // Helper function to get unique tech stacks from projects
 const getUniqueTechStacksFromProjects = (projects: Project[]): TechStack[] => {
   const allTechStacks = projects.flatMap(project => project.techStack);
@@ -51,7 +55,8 @@ export const projects: Project[] = [
     fullDescription: 'A comprehensive information system designed specifically for social media agencies to streamline their talent and project management workflows. The platform features robust modules for Talent Management, Client Relations, Project Tracking, Financial Management, Content Submission, and Content Management. Built to handle the fast-paced environment of social media agencies, the system efficiently manages tight deadlines and frequent content revisions while maintaining clear communication channels between team members and clients.',
     markdownFile: 'artsi.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
+      artsiFinanceImage,
+      artsiContentImage
     ],
     repositories: [
       {
@@ -107,7 +112,7 @@ export const projects: Project[] = [
     fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
     markdownFile: 'petclinic.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
+      ''
     ],
     repositories: [
       {

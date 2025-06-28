@@ -19,12 +19,14 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BrushIcon from '@mui/icons-material/Brush';
 import PaletteIcon from '@mui/icons-material/Palette';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import type { Project, RepositoryType } from '../types';
 import { RepositoryType as RepoType } from '../types';
 import { loadMarkdownContent } from '../utils/markdownLoader';
+import ImageZoomModal from './ImageZoomModal';
 
 interface ProjectModalProps {
   open: boolean;
@@ -36,6 +38,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [markdownContent, setMarkdownContent] = useState<string>('');
   const [loadingMarkdown, setLoadingMarkdown] = useState(false);
+  const [imageZoomOpen, setImageZoomOpen] = useState(false);
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -76,6 +79,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
 
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleImageClick = () => {
+    setImageZoomOpen(true);
+  };
+
+  const handleImageZoomClose = () => {
+    setImageZoomOpen(false);
   };
 
   const getRepositoryIcon = (type: RepositoryType) => {
@@ -214,21 +225,70 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           position: 'relative', 
           mb: 4, 
           px: { xs: 0, md: 4 }, // No padding on mobile, padding on desktop
-          backgroundColor: '#ffffff'
+          backgroundColor: '#ffffff',
+          height: { xs: '40vh', md: '50vh' }, // Set specific height for better image visibility
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
-          <CardMedia
-            component="img"
+          <Box
             sx={{
-              width: { xs: '100%', md: '60%' }, // Full width on mobile, 60% on desktop
-              aspectRatio: '16/9',
-              objectFit: 'cover',
-              borderRadius: { xs: 0, md: 1 }, // No border radius on mobile, rounded on desktop
-              margin: { xs: 0, md: '0 auto' }, // No margin on mobile, centered on desktop
-              display: 'block',
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              '&:hover .zoom-overlay': {
+                opacity: 1,
+              }
             }}
-            image={project.images[currentImageIndex]}
-            alt={project.title}
-          />
+            onClick={handleImageClick}
+          >
+            <CardMedia
+              component="img"
+              className="modal-image"
+              sx={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain', // Changed from 'cover' to 'contain' to show full image
+                borderRadius: { xs: 0, md: 0 }, // No border radius on mobile, rounded on desktop
+                display: 'block'
+              }}
+              image={project.images[currentImageIndex]}
+              alt={project.title}
+            />
+            
+            {/* Zoom Overlay */}
+            <Box
+              className="zoom-overlay"
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: 0,
+                transition: 'opacity 0.3s ease-in-out',
+                borderRadius: { xs: 0, md: 1 },
+              }}
+            >
+              <ZoomInIcon 
+                sx={{ 
+                  color: 'white', 
+                  fontSize: 48,
+                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+                }} 
+              />
+            </Box>
+          </Box>
           
           {project.images.length > 1 && (
             <>
@@ -432,6 +492,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ open, project, onClose }) =
           )}
         </Box>
       </DialogContent>
+
+      {/* Image Zoom Modal */}
+      <ImageZoomModal
+        open={imageZoomOpen}
+        imageSrc={project.images[currentImageIndex]}
+        imageAlt={`${project.title} - Image ${currentImageIndex + 1}`}
+        onClose={handleImageZoomClose}
+      />
     </Dialog>
   );
 };
