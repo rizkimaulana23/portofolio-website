@@ -21,7 +21,7 @@ export const personalInfo: PersonalInfo = {
   contacts: [
     {
       type: 'email',
-      label: 'rizki.maulana12@ui.ac.id',
+      label: 'rizki.maulana23@ui.ac.id',
       url: 'mailto:rizki.maulana23@ui.ac.id',
       icon: 'Email'
     },
@@ -40,7 +40,7 @@ export const personalInfo: PersonalInfo = {
     {
       type: 'twitter',
       label: 'Twitter',
-      url: 'https://twitter.com/wftRizki',
+      url: 'https://x.com/rizkistudies',
       icon: 'Twitter'
     }
   ],
