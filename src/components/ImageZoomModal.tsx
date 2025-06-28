@@ -35,7 +35,7 @@ const ImageZoomModal: React.FC<ImageZoomModalProps> = ({
   const [transform, setTransform] = useState<Transform>({ scale: 1, translateX: 0, translateY: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0, startTranslateX: 0, startTranslateY: 0 });
-  const [imageNaturalSize, setImageNaturalSize] = useState({ width: 0, height: 0 });
+  const [_, setImageNaturalSize] = useState({ width: 0, height: 0 });
   const [imageDisplaySize, setImageDisplaySize] = useState({ width: 0, height: 0 });
   
   const containerRef = useRef<HTMLDivElement>(null);
