@@ -6,6 +6,35 @@ import { RepositoryType } from '../types';
 import artsiFinanceImage from '../../public/images/artsi/Finance-Management-Feature.png';
 import artsiContentImage from '../../public/images/artsi/Content-Management-Feature.png';
 
+import kalmBookingFlow from '../../public/images/kalm/Booking-Flow.png'
+import kalmEmergencyContact from '../../public/images/kalm/Emergency-Contact.png'
+import kalmForgotPassword from '../../public/images/kalm/Forgot-Password.png'
+import kalmHelp from '../../public/images/kalm/Help-FAQs.png'
+import kalmJournal from '../../public/images/kalm/Journal.png'
+import kalmLogin from '../../public/images/kalm/Login.png'
+import kalmNotifications from '../../public/images/kalm/Notifications.png'
+import kalmOnlineConsultation from '../../public/images/kalm/Online-Consultation.png'
+import kalmRegisterChat from '../../public/images/kalm/Register-Chat.png'
+import kalmRegister from '../../public/images/kalm/Register.png'
+import kalmSplashOnboarding from '../../public/images/kalm/Splash-Onboarding.png'
+
+import apapDashboard from '../../public/images/apap-medika/Dashboard.png'
+import apapMedicineManagement from '../../public/images/apap-medika/Medicine-Management.png'
+import apapPatientManagement from '../../public/images/apap-medika/Patient-Management.png'
+import apapPrescriptionManagement from '../../public/images/apap-medika/Prescription-Management.png'
+
+import petAnimalType from '../../public/images/pet-clinic/Animal-Type-Management.png'
+import petLoginRegister from '../../public/images/pet-clinic/Login-Register.png'
+import petMedicineManagement from '../../public/images/pet-clinic/Medicine-Management.png'
+import petVaccine from '../../public/images/pet-clinic/Vaccine-Management.png'
+
+import tlqCampaign from '../../public/images/the-lucent-quarter/Campaign.png'
+import tlqDashboard from '../../public/images/the-lucent-quarter/Dashboard.png'
+import tlqMemberships from '../../public/images/the-lucent-quarter/Memberships.png'
+import tlqReservations from '../../public/images/the-lucent-quarter/Reservation.png'
+import tlqTransactions from '../../public/images/the-lucent-quarter/Transactions.png'
+import tlqWaitingList from '../../public/images/the-lucent-quarter/Waiting List.png'
+
 // Helper function to get unique tech stacks from projects
 const getUniqueTechStacksFromProjects = (projects: Project[]): TechStack[] => {
   const allTechStacks = projects.flatMap(project => project.techStack);
@@ -81,6 +110,40 @@ export const projects: Project[] = [
     year: 2025
   },
   {
+    id: '7',
+    title: 'Apap Medika',
+    shortDescription: 'Apap Medika',
+    fullDescription: 'Apap Medika',
+    markdownFile: 'apapmedika.md',
+    images: [
+      apapDashboard,
+      apapMedicineManagement,
+      apapPatientManagement,
+      apapPrescriptionManagement
+    ],
+    repositories: [
+      {
+        label: 'Frontend',
+        url: 'https://github.com/rizkimaulana23/artsi-frontend',
+        type: RepositoryType.GITHUB
+      },
+      {
+        label: 'Backend',
+        url: 'https://github.com/rizkimaulana23/artsi-backend',
+        type: RepositoryType.GITHUB
+      }
+    ],
+    techStack: [
+      TechStack.REACT,
+      TechStack.POSTGRESQL,
+      TechStack.NODE_JS,
+      TechStack.TYPESCRIPT,
+    ],
+    featured: true,
+    category: 'Web Development',
+    year: 2025
+  },
+  {
     id: '2',
     title: 'Sistem Informasi Pasar Merdeka',
     shortDescription: 'Traditional Market Information System for monitoring traditional market, infrastructure, food types, stock changes traditional market in Jakarta.',
@@ -111,7 +174,12 @@ export const projects: Project[] = [
     shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
     fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
     markdownFile: 'petclinic.md',
-    images: [],
+    images: [
+      petAnimalType,
+      petLoginRegister,
+      petMedicineManagement,
+      petVaccine
+    ],
     repositories: [
       {
         label: 'Source Code',
@@ -136,7 +204,17 @@ export const projects: Project[] = [
     fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
     markdownFile: 'petclinic.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
+      kalmBookingFlow,
+      kalmEmergencyContact,
+      kalmForgotPassword,
+      kalmHelp,
+      kalmJournal,
+      kalmLogin,
+      kalmNotifications,
+      kalmOnlineConsultation,
+      kalmRegister,
+      kalmRegisterChat,
+      kalmSplashOnboarding
     ],
     repositories: [
       {
@@ -160,15 +238,20 @@ export const projects: Project[] = [
     title: 'The Lucent Quarter CRM',
     shortDescription: 'System designed for learning SQL for Database Course in University of Indonesia ',
     fullDescription: 'This system is designed for the Database Course to teach students to make a system using purely SQL Query to understand deeper on how to make an SQL Query in a much more real cases. In this case, I\'m the one that design the system because I\'m an assistant lecturer for the Database course in my university.',
-    markdownFile: 'petclinic.md',
+    markdownFile: 'tlq.md',
     images: [
-      'https://via.placeholder.com/800x600/1976d2/ffffff?text=ArtSI'
+      tlqCampaign,
+      tlqDashboard,
+      tlqMemberships,
+      tlqReservations,
+      tlqTransactions,
+      tlqWaitingList
     ],
     repositories: [
       {
-        label: 'Source Code',
-        url: 'https://github.com/rizkimaulana23/petclinic',
-        type: RepositoryType.GITHUB
+        label: 'Figma',
+        url: 'https://www.figma.com/proto/gdqJlCNmJTLiCVABVJr6sq/CRM?node-id=0-1&t=np5Ero7uXKNWJsVR-1',
+        type: RepositoryType.FIGMA
       }
     ],
     techStack: [
